@@ -1,11 +1,11 @@
 # Choose Your Own Adventure: Dorian Gray Edition
 
-#####*My English (ENG3U3) creative project*
+##### *My English (ENG3U3) creative project*
 
-###Medium
+### Medium
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ren'Py Visual Novel Engine 
 
-###Details
+### Details
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I have chosen to analyze 
 several turning points in the novel for Dorian (e.g. going 
 into the garden with Lord Henry, going to the theatre with 
