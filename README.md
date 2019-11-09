@@ -5,7 +5,7 @@
 ##### *My English (ENG3U3) creative project*
 
 ### Medium
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ren'Py Visual Novel Engine 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ren'Py Visual Novel Engine.
 
 ### Details
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I have chosen to analyze 
