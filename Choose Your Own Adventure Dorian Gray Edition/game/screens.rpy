@@ -368,11 +368,11 @@ screen main_menu():
     ## contents of the main menu are in the navigation screen.
     use navigation
 
-    if gui.show_name:
+    ## if gui.show_name:
 
-        vbox:
-            text "[config.name!t]":
-                style "main_menu_title"
+        ## vbox:
+            ## text "[config.name!t]":
+                ## style "main_menu_title"
 
             ## text "[config.version]":
                 ## style "main_menu_version"
@@ -557,6 +557,7 @@ screen about():
 
             label "[config.name!t]"
             ## text _("Version [config.version!t]\n")
+            text _(" ")
 
             ## gui.about is usually set in options.rpy.
             if gui.about:
