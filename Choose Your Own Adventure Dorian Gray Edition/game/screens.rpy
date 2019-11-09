@@ -252,14 +252,13 @@ screen quick_menu():
 
             xalign 0.5
             yalign 1.0
-
-            textbutton _("Back") action Rollback()
+            ## textbutton _("Back") action Rollback()
             textbutton _("History") action ShowMenu('history')
-            textbutton _("Skip") action Skip() alternate Skip(fast=True, confirm=True)
-            textbutton _("Auto") action Preference("auto-forward", "toggle")
-            textbutton _("Save") action ShowMenu('save')
-            textbutton _("Q.Save") action QuickSave()
-            textbutton _("Q.Load") action QuickLoad()
+            ## textbutton _("Skip") action Skip() alternate Skip(fast=True, confirm=True)
+            ## textbutton _("Auto") action Preference("auto-forward", "toggle")
+            ## textbutton _("Save") action ShowMenu('save')
+            ## textbutton _("Q.Save") action QuickSave()
+            ## textbutton _("Q.Load") action QuickLoad()
             textbutton _("Prefs") action ShowMenu('preferences')
 
 
@@ -307,9 +306,9 @@ screen navigation():
 
             textbutton _("History") action ShowMenu("history")
 
-            textbutton _("Save") action ShowMenu("save")
+            ## textbutton _("Save") action ShowMenu("save")
 
-        textbutton _("Load") action ShowMenu("load")
+        ## textbutton _("Load") action ShowMenu("load")
 
         textbutton _("Preferences") action ShowMenu("preferences")
 
@@ -375,8 +374,8 @@ screen main_menu():
             text "[config.name!t]":
                 style "main_menu_title"
 
-            text "[config.version]":
-                style "main_menu_version"
+            ## text "[config.version]":
+                ## style "main_menu_version"
 
 
 style main_menu_frame is empty
@@ -557,7 +556,7 @@ screen about():
         vbox:
 
             label "[config.name!t]"
-            text _("Version [config.version!t]\n")
+            ## text _("Version [config.version!t]\n")
 
             ## gui.about is usually set in options.rpy.
             if gui.about:
@@ -737,17 +736,17 @@ screen preferences():
 
                 vbox:
                     style_prefix "radio"
-                    label _("Rollback Side")
-                    textbutton _("Disable") action Preference("rollback side", "disable")
-                    textbutton _("Left") action Preference("rollback side", "left")
-                    textbutton _("Right") action Preference("rollback side", "right")
+                    ## label _("Rollback Side")
+                    ## textbutton _("Disable") action Preference("rollback side", "disable")
+                    ## textbutton _("Left") action Preference("rollback side", "left")
+                    ## textbutton _("Right") action Preference("rollback side", "right")
 
                 vbox:
                     style_prefix "check"
-                    label _("Skip")
-                    textbutton _("Unseen Text") action Preference("skip", "toggle")
-                    textbutton _("After Choices") action Preference("after choices", "toggle")
-                    textbutton _("Transitions") action InvertSelected(Preference("transitions", "toggle"))
+                    ## label _("Skip")
+                    ## textbutton _("Unseen Text") action Preference("skip", "toggle")
+                    ## textbutton _("After Choices") action Preference("after choices", "toggle")
+                    ## textbutton _("Transitions") action InvertSelected(Preference("transitions", "toggle"))
 
                 ## Additional vboxes of type "radio_pref" or "check_pref" can be
                 ## added here, to add additional creator-defined preferences.
@@ -764,9 +763,9 @@ screen preferences():
 
                     bar value Preference("text speed")
 
-                    label _("Auto-Forward Time")
+                    ## label _("Auto-Forward Time")
 
-                    bar value Preference("auto-forward time")
+                    ## bar value Preference("auto-forward time")
 
                 vbox:
 
@@ -776,32 +775,32 @@ screen preferences():
                         hbox:
                             bar value Preference("music volume")
 
-                    if config.has_sound:
+                    ## if config.has_sound:
 
-                        label _("Sound Volume")
+                        ## label _("Sound Volume")
 
-                        hbox:
-                            bar value Preference("sound volume")
+                        ## hbox:
+                            ## bar value Preference("sound volume")
 
-                            if config.sample_sound:
-                                textbutton _("Test") action Play("sound", config.sample_sound)
+                            ## if config.sample_sound:
+                                ## textbutton _("Test") action Play("sound", config.sample_sound)
 
 
-                    if config.has_voice:
-                        label _("Voice Volume")
+                    ## if config.has_voice:
+                        ## label _("Voice Volume")
 
-                        hbox:
-                            bar value Preference("voice volume")
+                        ## hbox:
+                            ## bar value Preference("voice volume")
 
-                            if config.sample_voice:
-                                textbutton _("Test") action Play("voice", config.sample_voice)
+                            ## if config.sample_voice:
+                                ## textbutton _("Test") action Play("voice", config.sample_voice)
 
-                    if config.has_music or config.has_sound or config.has_voice:
-                        null height gui.pref_spacing
+                    ## if config.has_music or config.has_sound or config.has_voice:
+                        ## null height gui.pref_spacing
 
-                        textbutton _("Mute All"):
-                            action Preference("all mute", "toggle")
-                            style "mute_all_button"
+                        ## textbutton _("Mute All"):
+                            ## action Preference("all mute", "toggle")
+                            ## style "mute_all_button"
 
 
 style pref_label is gui_label
@@ -1431,9 +1430,9 @@ screen quick_menu():
             xalign 0.5
             yalign 1.0
 
-            textbutton _("Back") action Rollback()
-            textbutton _("Skip") action Skip() alternate Skip(fast=True, confirm=True)
-            textbutton _("Auto") action Preference("auto-forward", "toggle")
+            ## textbutton _("Back") action Rollback()
+            ## textbutton _("Skip") action Skip() alternate Skip(fast=True, confirm=True)
+            ## textbutton _("Auto") action Preference("auto-forward", "toggle")
             textbutton _("Menu") action ShowMenu()
 
 

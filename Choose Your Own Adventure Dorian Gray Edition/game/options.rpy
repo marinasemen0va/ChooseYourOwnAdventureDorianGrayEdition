@@ -12,7 +12,7 @@
 ##
 ## The _() surrounding the string marks it as eligible for translation.
 
-define config.name = _("Choose Your Own Adventure Dorian Gray Edition")
+define config.name = _("Choose Your Own Adventure: Dorian Gray Edition")
 
 
 ## Determines if the title given above is shown on the main menu screen. Set
@@ -29,7 +29,11 @@ define config.version = "1.0"
 ## Text that is placed on the game's about screen. Place the text between the
 ## triple-quotes, and leave a blank line between paragraphs.
 
-define gui.about = _p("""
+define gui.about = _p("""Dorian Gray is the driving character for the novel "The Picture of Dorian Gray" and thus his choices create the plot. Pointing out the turning points in the plot and analyzing them, as well as suggesting alternatives if the event was not to occur, provides insight into the things that shaped Dorian. It also allows for extrapolation of what would happen if these events were not to occur and just how different Dorian would be.
+
+Source code available at {a=https://github.com/marinasemen0va/ChooseYourOwnAdventureDorianGrayEdition}this GitHub repository{/a}.
+
+Created by {a=https://marina.codes/}Marina Semenova{/a}.
 """)
 
 
@@ -119,7 +123,7 @@ define config.window_hide_transition = Dissolve(.2)
 ## Controls the default text speed. The default, 0, is infinite, while any other
 ## number is the number of characters per second to type out.
 
-default preferences.text_cps = 0
+default preferences.text_cps = 60
 
 
 ## The default auto-forward delay. Larger numbers lead to longer waits, with 0
