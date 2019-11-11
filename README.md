@@ -44,5 +44,5 @@ is located. The resulting path should be something like ```..\ChooseYourOwnAdven
 * Download the [Ren'Py](https://www.renpy.org/dl/7.3.5/renpy-7.3.5-sdk.7z.exe) installer.
 * Run the installer and choose a location where the files will be installed 
 (the default is usually ```\Downloads```).
-* Go to the folder with the files (```\renpy-7.3.5-sdk```) and run ```renpy.exe```.
+* Go to the folder with the files (e.g. ```\renpy-7.3.5-sdk```) and run ```renpy.exe```.
 * Return to the instructions list.
