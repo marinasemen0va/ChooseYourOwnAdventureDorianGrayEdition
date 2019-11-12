@@ -1,9 +1,6 @@
-﻿## This file contains options that can be changed to customize your game.
-##
-## Lines beginning with two '#' marks are comments, and you shouldn't uncomment
-## them. Lines beginning with a single '#' mark are commented-out code, and you
-## may want to uncomment them when appropriate.
-
+﻿# @author Marina Semenova
+# November 2019
+# This file is for the options that can be changed to customize your game.
 
 ## Basics ######################################################################
 
@@ -114,8 +111,8 @@ define config.window = "auto"
 
 ## Transitions used to show and hide the dialogue window
 
-define config.window_show_transition = Dissolve(.2)
-define config.window_hide_transition = Dissolve(.2)
+define config.window_show_transition = Dissolve(.5)
+define config.window_hide_transition = Dissolve(.5)
 
 
 ## Preference defaults #########################################################

@@ -1,35 +1,30 @@
-﻿# The script of the game goes in this file.
+﻿# @author Marina Semenova
+# November 2019
+# This file is for the game script
 
-# Declare characters used by this game. The color argument colorizes the
-# name of the character.
-
+# define characters
 define n = Character("Narrator")
+define d = Character("Dorian")
+define b = Character("Basil")
+define h = Character("Harry")
 
+# define scenes
+image bg_room = "bg_room.png"
+image dorian_at_piano = "dorian_at_piano.png"
+image dorian_standing = "dorian_standing.png"
 
-# The game starts here.
-
+# game starts here
 label start:
-
-    # Show a background. This uses a placeholder by default, but you can
-    # add a file (named either "bg room.png" or "bg room.jpg") to the
-    # images directory to show it.
-
-    scene bg room
-
-    # This shows a character sprite. A placeholder is used, but you can
-    # replace it by adding a file named "eileen happy.png" to the images
-    # directory.
-
-    # show eileen happy
-
-    # These display lines of dialogue.
-
+    # show a bg
+    scene bg_room
+    # intro
     menu:
         n "Hello, and welcome to Choose Your Own Adventure: Dorian Gray Edition. Would you like a tutorial or are you a returning player ready to get into the action?"
         "I would like a tutorial.":
             jump tut
         "No, I’m good.":
             jump notut
+    # the tutorial path
     label tut:
         n "So, here’s a little tutorial on how this game is going to work!"
         n "You are going to be taking on the role of Dorian Gray and you will have to make some very important choices for him! The choices made affect the outcome of his life, so be careful what you choose! Of course, you could just follow the plot of the book, but what fun is that?"
@@ -41,7 +36,7 @@ label start:
             "Let’s go!":
                 jump go
         label hype:
-            n "You chose “I’m sure hyped for this!” which is why I’m going to say “That’s great! Let’s go!”.  If you had chosen “Let’s go!”, I would have replied “Alright, let’s go!”."
+            n "You chose “I’m sure hyped for this!” which is why I’m going to say “That’s great! Let’s go!”. If you had chosen “Let’s go!”, I would have replied “Alright, let’s go!”."
             jump afttest
         label go:
             n "You chose “Let’s go!” which is why I’m going to say “Alright, let’s go!”. If you had chosen “I’m sure hyped for this!”, I would have replied “That’s great! Let’s go!”."
@@ -49,13 +44,18 @@ label start:
         label afttest:
             n "As you can see, your choices make a difference!"
             n "Now it’s time to seal the fate of Dorian Gray. *dun dun dunnnnnn*"
+            scene dorian_at_piano
+            n "Before we start, let’s get to know your character."
+            n "Dorian, as seen in his first appearance, is a very boyish character; he is the image of innocence and purity. But *spoiler* at the end of the novel, he is as corrupt as people get. So what happened? How, and when, did he lose his innocence?"
+            n "As you play this game there will be significant choices which either lead to Dorian’s demise, as in the novel, or, as this is a fictitious game, it may lead to new stories…"
             jump game
+    # skip tutorial path
     label notut:
         n "Alrighty then! Welcome back! Came back to try to find new outcomes, eh?"
         jump game
+    # gameplay
     label game:
+        scene dorian_standing
         n "Code game time boi!"
-
-    # This ends the game.
-
+    # end of game
     return
