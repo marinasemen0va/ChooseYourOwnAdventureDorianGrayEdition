@@ -99,7 +99,7 @@ define gui.game_menu_background = "gui/game_menu.png"
 ## time.
 
 ## The height of the textbox containing dialogue.
-define gui.textbox_height = 255
+define gui.textbox_height = 185
 
 ## The placement of the textbox vertically on the screen. 0.0 is the top, 0.5 is
 ## center, and 1.0 is the bottom.
@@ -436,10 +436,10 @@ init python:
         gui.label_text_size = 34
 
         ## Adjust the location of the textbox.
-        gui.textbox_height = 500
+        gui.textbox_height = 240
         gui.name_xpos = 80
-        gui.text_xpos = 110
-        gui.text_width = 1500
+        gui.text_xpos = 90
+        gui.text_width = 1100
 
         ## Change the size and spacing of various things.
         gui.slider_size = 36
