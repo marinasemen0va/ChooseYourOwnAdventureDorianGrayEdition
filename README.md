@@ -33,11 +33,11 @@ just how different Dorian would be.
 * Once the application is running, head to ```preferences``` (bottom right).
 * For the game to show up in the projects list, and for it to be able to be 
 launched, it must be in the ```Projects Directory```, which is defined in 
-preferences.
+```preferences```.
 * Set the ```Project Directory``` to where ```ChooseYourOwnAdventureDorianGrayEdition-master``` 
 is located. The resulting path should be something like ```..\ChooseYourOwnAdventureDorianGrayEdition-master```.
 * Once the directory is set, click ```Return``` to head back to the projects list.
-* ```Choose Your Own Adventure Dorian Gray Edition``` should now appear in the list. Select it and click ```Launch Project```.
+* ```Choose Your Own Adventure Dorian Gray Edition``` should now appear in the list (if it does not, try clicking ```refresh``` (next to ```PROJECTS:```)). Select it and click ```Launch Project```.
 * Enjoy :) - *marina*.
 
 ### Ren'Py Installation
