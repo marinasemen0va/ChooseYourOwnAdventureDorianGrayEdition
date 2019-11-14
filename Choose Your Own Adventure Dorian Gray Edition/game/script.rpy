@@ -33,6 +33,11 @@ image rip_basil = "rip_basil.png"
 image talk_w_harry = "talk_w_harry.png"
 image room_w_painting_2 = "room_w_painting_2.png"
 image body = "body.png"
+image sibyl = "sibyl.png"
+
+# variables
+$ influence = False
+$ repentance = False
 
 # game starts here
 label start:
