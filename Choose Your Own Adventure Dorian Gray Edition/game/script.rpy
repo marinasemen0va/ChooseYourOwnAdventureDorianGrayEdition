@@ -3,11 +3,18 @@
 # This file is for the game script
 
 # define characters
-define n = Character("Narrator")
-define d = Character("Dorian")
-define b = Character("Basil")
-define h = Character("Harry")
-define s = Character("Sibyl")
+define n = Character("Narrator", image="narrator")
+define d = Character("Dorian", image="dorian")
+define b = Character("Basil", image="basil")
+define h = Character("Harry", image="harry")
+define s = Character("Sibyl", image="sibyl")
+
+#character images
+image side narrator = "narrator.png"
+image side dorian = "dorian.png"
+image side basil = "basil.png"
+image side harry = "harry.png"
+image side sibyl = "sibyl.png"
 
 # define scenes
 image bg_room = "bg_room.png"
@@ -18,21 +25,20 @@ image theatre = "theatre.png"
 image sibyl_performs = "sibyl_performs.png"
 image backstage = "backstage.png"
 image home_w_painting = "home_w_painting.png"
+image home_w_painting_clean = "home_w_painting.png"
+image home_w_painting_covered = "home_w_painting_covered.png"
 image outside_home = "outside_home.png"
 image inside_home = "inside_home.png"
 image home_w_tea = "home_w_tea.png"
 image book = "book.png"
 image outside_w_basil = "outside_w_basil.png"
-image inside_w_basil = "inside_w_basil.png"
-image room_w_painting = "room_w_painting.png"
-image revealed_painting = "revealed_painting.png"
+image og_room_w_painting = "og_room_w_painting.png"
 image knife = "knife.png"
-image rip_basil = "rip_basil.png"
 image talk_w_harry = "talk_w_harry.png"
-image room_w_painting_2 = "room_w_painting_2.png"
-image body = "body.png"
 image club = "club.png"
 image book_in_hand = "book_in_hand.png"
+image room_w_painting = "room_w_painting.png"
+image room_w_painting_covered = "room_w_painting_covered.png"
 
 # game starts here
 label start:
@@ -102,11 +108,13 @@ label start:
                 d "There’s Basil calling us back in. I must talk to Harry once more at a later time!"
                 scene dorian_standing
                 b "‘It is quite finished!’"
+                scene og_room_w_painting
                 d "Ah! It’s so beautiful and youthful! I’m so jealous of it! After what Harry said, I can see what he means when he says beauty matters above all else..."
                 d "‘How sad it is! How sad it is!’"
                 d "‘I shall grow old, and horrible, and dreadful. It will never be older than this particular day of June....’"
                 d "‘If it were only the other way! If it were I who was to be always young, and the picture that was to grow old!’"
                 d "‘For that – for that – I would give everything! Yes, there is nothing in the whole world I would not give! I would give my soul for that!’"
+                scene dorian_standing
                 h "‘You would hardly care for such an arrangement, Basil.’"
                 b "‘I should object very strongly, Harry.’"
             "Keep sitting, for Basil":
@@ -123,14 +131,14 @@ label start:
                 b "‘Why?’"
                 d "‘Because I have promised Lord Henry Wotton to go with him.’"
                 if deal == False:
-                    scene home_w_painting
+                    scene home_w_painting_clean
                     n "One night, Dorian returns from the club, where he was with Harry..."
                     n "Basil's painting has been sent to its rightful owner..."
                     d "Ah! It’s so beautiful and youthful! I’m so jealous of it! After what Harry said, I can see what he means when he says beauty matters above all else..."
-                    d "‘How sad it is! How sad it is!’"
-                    d "‘I shall grow old, and horrible, and dreadful. It will never be older than this particular day of June....’"
-                    d "‘If it were only the other way! If it were I who was to be always young, and the picture that was to grow old!’"
-                    d "‘For that – for that – I would give everything! Yes, there is nothing in the whole world I would not give! I would give my soul for that!’"
+                    d "How sad it is! How sad it is!"
+                    d "I shall grow old, and horrible, and dreadful. It will never be older than this particular day of June...."
+                    d "If it were only the other way! If it were I who was to be always young, and the picture that was to grow old!"
+                    d "For that – for that – I would give everything! Yes, there is nothing in the whole world I would not give! I would give my soul for that!"
                 scene theatre
                 n "It has been a while since Dorian met Harry, and they have only bonded further in the time since then."
                 n "Dorian has invited Harry and Basil to watch Sibyl, his new fiancé, perform in a play."
@@ -210,12 +218,15 @@ label start:
                     h "‘Are you sure about this, Dorian?’"
                 menu:
                     "‘Yes, I'm sure. I love her.’":
+                        d "‘Yes, I'm sure. I love her.’"
                         h "‘Alright, be it on your head.’"
+                        scene bg_room
                         n "Dorian and Sibyl marry, and live a happy life."
                         n "In this path, Dorian does undergo influence and does make the deal with the painting, but in the end he chooses to love Sibyl."
                         n "He has shown a love for Sibyl which transcends his love for pleasures and sin, which results in him taking her as his loving wife."
                         jump outro
                     "‘No, Harry. I'm not.’":
+                        d "‘No, Harry. I'm not.’"
                         h "‘Ah, I knew you were not so foolish as to marry!’"
                         d "‘I believe you're right. I don't think the married life is for me...’"
                         d "‘Ah, I must break it off! I need to see her immediately! She’s at the theatre to-night! I will go now!’"
@@ -237,7 +248,10 @@ label start:
         d "That my beauty would be untarnished and that the canvas would bear the burden of my passions and sins!"
         d "The expressions looks cruel... Could it be caused by what I said to Sybil? It was her fault, but I do regret it..."
         d "It must be a mistake, merely an illusion wrought on the troubled senses. How foolish of me to think it had altered!"
+        d "I will cover it for now and examine it later."
         d "I will go back to Sibyl Vane, make her amends, marry her, try to love her again..."
+        scene inside_home
+        n "Next morning..."
         if close:
             scene outside_home
             h "‘My dear boy, I must see you. Let me in at once. I can’t bear your shutting yourself up like this.’"
@@ -286,8 +300,10 @@ label start:
                 d "The portrait must be hidden away at all costs. I cannot run such a risk of discovery again."
             "Let Basil take the painting":
                 d "Here's my chance to get that thing away from me..."
+                scene home_w_painting_covered
                 d "‘Alright! Take it! I want to be rid of it!’"
                 b "‘I didn't know you hated it so!’"
+                scene home_w_painting_covered
                 b "..."
                 b "‘What is wrong with the expression??? I don't remember painting you to look so... cruel.’"
                 d "‘One day you introduced me to a friend of yours, who explained to me the wonder of youth, and you finished a portrait of me that revealed to me the wonder of beauty.’"
@@ -388,7 +404,7 @@ label start:
             n "It was on the ninth of November, the eve of Dorian’s own thirty-eighth birthday, as he often remembered afterwards."
             n "He was walking home from dinner with Harry when suddenly..."
             b "‘Dorian! What an extraordinary piece of luck! Here we are at your door. Let me come in for a moment. I have something to say to you. It is about yourself.’"
-            scene inside_w_basil
+            scene inside_home
             b "‘It is not much to ask of you, Dorian, and it is entirely for your own sake that I am speaking.’"
             b "‘I think it right that you should know that the most dreadful things are being said against you in London.’"
             d "‘I don’t wish to know anything about them. I love scandals about other people, but scandals about myself don’t interest me. They have not got the charm of novelty.’"
@@ -402,12 +418,12 @@ label start:
                         d "Ah I hate him so much right now!"
                         scene knife
                         d "..."
-                        scene rip_basil2
+                        scene inside_home
                         d "Before I knew it, I had stabbed Basil."
                         if close:
                             jump harry_talk
                         else:
-                            scene room_w_painting_2
+                            scene room_w_painting_covered
                             n "Dorian continues to live his life, but his conscience burdens him."
                             n "After what happened to Sybil, Basil, James, and others he had corrupted, he was beginning to feel guilty. When finally..."
                             jump painting_death
@@ -429,11 +445,11 @@ label start:
                 menu:
                     "Show Basil the painting":
                         d "‘You shall see it yourself, to-night! Come: it is your own handiwork. Why shouldn’t you look at it?’"
-                        scene room_w_painting
+                        scene room_w_painting_covered
                         d "‘So you think that it is only God who sees the soul, Basil? Draw that curtain back, and you will see mine.’"
                         b "‘You are mad, Dorian, or playing a part.’"
                         d "‘You won’t? Then I must do it myself.’"
-                        scene revealed_painting
+                        scene room_w_painting
                         b "Ahhhhhhhh"
                         b "‘You told me you had destroyed it.’"
                         d "‘I was wrong. It has destroyed me.’"
@@ -447,12 +463,12 @@ label start:
                                 d "Ah I hate him so much right now!"
                                 scene knife
                                 d "..."
-                                scene rip_basil
+                                scene room_w_painting
                                 d "Before I knew it, I had stabbed Basil."
                                 if close:
                                     jump harry_talk
                                 else:
-                                    scene room_w_painting_2
+                                    scene room_w_painting_covered
                                     n "Dorian continues to live his life, but his conscience burdens him."
                                     n "After what happened to Sybil, Basil, James, and others he had corrupted, he was beginning to feel guilty. When finally..."
                                     jump painting_death
@@ -481,7 +497,6 @@ label start:
                         b "‘You can be the man you were before you met him, back when you were in my studio everyday.’"
                         d "‘You really think so?’"
                         b "‘Yes, Dorian...’"
-                        scene room_w_painting_2
                         n "Basil moves on to Paris, where he takes a studio and shuts himself up till he has finished a great picture he has in his head, just as he intended to do."
                         n "Basil also salvaged his relationship with Dorian as he helped him find his way again."
                         n "While Dorian stops his sinful lifestyle after the confrontation with Basil, his past deeds still haunt him."
@@ -504,15 +519,15 @@ label start:
             h "‘Do stay. You have never played so well as to-night. There was something in your touch that was wonderful. It had more expression than I had ever heard from it before.’"
             d "‘It is because I am going to be good. I am a little changed already.’"
         label painting_death:
-            scene room_w_painting_2
+            scene room_w_painting
             d "I regret my wish to have the portrait take the toll for my wrongdoings. I want to start anew, and change my ways for the better. Maybe the painting will revert itself..."
             d "..."
             d "I can see no change, save that in the eyes there was a look of cunning, and in the mouth the curved wrinkle of the hypocrite."
             d "The thing was still loathsome - more loathsome than before - and the scarlet dew that spotted the hand seemed brighter, and more like blood newly spilt."
             menu:
                 "Stab the painting":
-                    n "Dorian takes the knife, the very same one that he had used to stab Basil, and thrusts it into the painting."
-                    scene body
+                    n "Dorian takes the knife, the very same one that he had used to stab Basil, and thrusts it into the painting..."
+                    scene bg_room
                     n "There was a cry heard, and a crash. The servants eventually find the source of the sound."
                     n "When they entered, they found hanging upon the wall a splendid portrait of their master as they had last seen him, in all the wonder of his exquisite youth and beauty."
                     n "Lying on the floor was a dead man, in evening dress, with a knife in his heart. He was withered, wrinkled, and loathsome of visage."
@@ -527,6 +542,5 @@ label start:
                     jump outro
     # end of game
     label outro:
-        scene bg_room
         n "Hey! You’ve completed the game! Thank you for playing! Hope you enjoyed the experience and learned something new!"
         return
