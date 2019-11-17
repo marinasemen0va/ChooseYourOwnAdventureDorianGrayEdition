@@ -10,6 +10,7 @@ define d_sad = Character("Dorian", image="dorian_sad") #TODO TODO TODO
 define d_angry = Character("Dorian", image="dorian_angry") #TODO TODO TODO
 define b = Character("Basil", image="basil")
 define b_sad = Character("Basil", image="basil_sad")
+define b_happy = Character("Basil", image="basil_happy")
 define h = Character("Harry", image="harry")
 define s = Character("Sibyl", image="sibyl")
 define s_sad = Character("Sibyl", image="sibyl_sad") #TODO TODO TODO
@@ -29,7 +30,7 @@ image side dorian_sad = "dorian_sad.png"
 image side dorian_angry = "dorian_angry.png"
 image side sibyl_sad = "sibyl_sad.png"
 image side basil_sad = "basil_sad.png"
-
+image side basil_happy = "basil_happy.png"
 # define scenes
 image bg_room = "bg_room.png"
 image dorian_at_piano = "dorian_at_piano.png"
@@ -117,23 +118,23 @@ label start:
                 d "‘Basil, I am tired of standing. I must go out and sit in the garden. The air is stifling here.’"
                 scene garden
                 d "Ah yes, the things Harry has to say, they truly are remarkable! Yet, in a way, they are quite horrid. I can feel fresh influences at work within me..."
-                b "‘I am waiting! Do come in. The light is quite perfect.’"
+                b_happy "‘I am waiting! Do come in. The light is quite perfect.’"
                 d "There’s Basil calling us back in. I must talk to Harry once more at a later time!"
                 scene dorian_standing
-                b "‘It is quite finished!’"
+                b_happy "‘It is quite finished!’"
                 scene og_room_w_painting
-                d "Ah! It’s so beautiful and youthful! I’m so jealous of it! After what Harry said, I can see what he means when he says beauty matters above all else..."
-                d "‘How sad it is! How sad it is!’"
-                d "‘I shall grow old, and horrible, and dreadful. It will never be older than this particular day of June....’"
-                d "‘If it were only the other way! If it were I who was to be always young, and the picture that was to grow old!’"
-                d "‘For that – for that – I would give everything! Yes, there is nothing in the whole world I would not give! I would give my soul for that!’"
+                d_sad "Ah! It’s so beautiful and youthful! I’m so jealous of it! After what Harry said, I can see what he means when he says beauty matters above all else..."
+                d_sad "‘How sad it is! How sad it is!’"
+                d_sad "‘I shall grow old, and horrible, and dreadful. It will never be older than this particular day of June....’"
+                d_sad "‘If it were only the other way! If it were I who was to be always young, and the picture that was to grow old!’"
+                d_sad "‘For that – for that – I would give everything! Yes, there is nothing in the whole world I would not give! I would give my soul for that!’"
                 scene dorian_standing
                 h "‘You would hardly care for such an arrangement, Basil.’"
-                b "‘I should object very strongly, Harry.’"
+                b_sad "‘I should object very strongly, Harry.’"
             "Keep sitting, for Basil":
                 n "Dorian stays, thus never hearing more from Harry, and therefore he is not overtaken by the painting’s beauty and youthfulness."
                 n "After a while Basil announces..."
-                b "‘It is quite finished!’"
+                b_happy "‘It is quite finished!’"
                 d "‘Sorry, my friend, but that was dreadful! I was awfully bored standing here for so long! Although the work is very nice...’"
         h "‘Let us go to the theatre to-night.’"
         b "‘Don’t go to the theatre to-night, Dorian. Stop and dine with me.’"
@@ -141,62 +142,62 @@ label start:
             "‘I can’t.’":
                 $ close = True
                 d "‘I can’t, Basil.’"
-                b "‘Why?’"
+                b_sad "‘Why?’"
                 d "‘Because I have promised Lord Henry Wotton to go with him.’"
                 if deal == False:
                     scene home_w_painting_clean
                     n "One night, Dorian returns from the club, where he was with Harry..."
                     n "Basil's painting has been sent to its rightful owner..."
-                    d "Ah! It’s so beautiful and youthful! I’m so jealous of it! After what Harry said, I can see what he means when he says beauty matters above all else..."
-                    d "How sad it is! How sad it is!"
-                    d "I shall grow old, and horrible, and dreadful. It will never be older than this particular day of June...."
-                    d "If it were only the other way! If it were I who was to be always young, and the picture that was to grow old!"
-                    d "For that – for that – I would give everything! Yes, there is nothing in the whole world I would not give! I would give my soul for that!"
+                    d_sad "Ah! It’s so beautiful and youthful! I’m so jealous of it! After what Harry said, I can see what he means when he says beauty matters above all else..."
+                    d_sad "How sad it is! How sad it is!"
+                    d_sad "I shall grow old, and horrible, and dreadful. It will never be older than this particular day of June...."
+                    d_sad "If it were only the other way! If it were I who was to be always young, and the picture that was to grow old!"
+                    d_sad "For that – for that – I would give everything! Yes, there is nothing in the whole world I would not give! I would give my soul for that!"
                 scene theatre
                 n "It has been a while since Dorian met Harry, and they have only bonded further in the time since then."
                 n "Dorian has invited Harry and Basil to watch Sibyl, his new fiancé, perform in a play."
-                d "I have just recently met Sibyl, whom I adore! She is an amazing actress, simply a born artist!"
-                d "I have had the arms of Rosalind around me, and kissed Juliet on the mouth. Sibyl is the only thing I care about."
-                d "The mere touch of Sybil Vane’s hand makes me forget Harry and all his wrong, fascinating, poisonous, delightful theories."
-                d "I have invited Harry and Basil to see her skill!"
+                d_happy "I have just recently met Sibyl, whom I adore! She is an amazing actress, simply a born artist!"
+                d_happy "I have had the arms of Rosalind around me, and kissed Juliet on the mouth. Sibyl is the only thing I care about."
+                d_happy "The mere touch of Sybil Vane’s hand makes me forget Harry and all his wrong, fascinating, poisonous, delightful theories."
+                d_happy "I have invited Harry and Basil to see her skill!"
                 ns "Sibyl performs badly that evening, contrary to her previous performances..."
                 n "After the performance..."
                 h "‘She is quite beautiful, Dorian, but she can’t act. Let us go.’"
-                d "‘I am going to see the play through. I am awfully sorry that I have made you waste an evening, Harry. I apologize to you both.’"
+                d_sad "‘I am going to see the play through. I am awfully sorry that I have made you waste an evening, Harry. I apologize to you both.’"
             "‘Yes, I’ll stay.’":
                 d "‘Yes, I’ll stay.’"
-                b "‘That's great Dorian!’"
+                b_happy "‘That's great Dorian!’"
                 h "I will take my leave then."
                 b "Goodbye Harry."
                 n "Dorian chose not to go with Harry, therefore preventing further bonding and influence."
                 scene theatre
                 n "A while after Dorian's encounter with Harry, Dorian has invited Basil to watch Sibyl, his new fiancé, perform in a play."
-                d "I have just recently met Sibyl, whom I adore! She is an amazing actress, simply a born artist!"
-                d "I have had the arms of Rosalind around me, and kissed Juliet on the mouth. Sibyl is the only thing I care about."
+                d_happy "I have just recently met Sibyl, whom I adore! She is an amazing actress, simply a born artist!"
+                d_happy "I have had the arms of Rosalind around me, and kissed Juliet on the mouth. Sibyl is the only thing I care about."
                 if influence == True:
-                    d "The mere touch of Sybil Vane’s hand makes me forget Harry and all his wrong, fascinating, poisonous, delightful theories."
-                d "I have invited Basil to see her skill!"
+                    d_happy "The mere touch of Sybil Vane’s hand makes me forget Harry and all his wrong, fascinating, poisonous, delightful theories."
+                d_happy "I have invited Basil to see her skill!"
                 ns "Sibyl performs badly that evening, contrary to her previous performances..."
                 n "After the performance..."
                 b "Dorian..."
-                d "‘Yes, I know she acted poorly. I am going to see the play through. I am awfully sorry that I have made you waste an evening, Basil.’"
+                d_sad "‘Yes, I know she acted poorly. I am going to see the play through. I am awfully sorry that I have made you waste an evening, Basil.’"
         b "‘My dear Dorian, I should think Miss Vane was ill. We will come some other night.’"
-        d "‘I wish she were ill, but she seems to me to be simply callous and cold. She has entirely altered.’"
-        d "‘Last night she was a great artist. This evening she is merely a commonplace, mediocre actress.’"
-        b "‘Don’t talk like that about any one you love, Dorian. Love is a more wonderful thing than Art.’"
+        d_sad "‘I wish she were ill, but she seems to me to be simply callous and cold. She has entirely altered.’"
+        d_sad "‘Last night she was a great artist. This evening she is merely a commonplace, mediocre actress.’"
+        b_sad "‘Don’t talk like that about any one you love, Dorian. Love is a more wonderful thing than Art.’"
         if close:
             h "‘They are both simply forms of imitation, but do let us go.’"
         scene backstage
-        d "How heartbroken I am! I must go to confront her about it!"
+        d_sad "How heartbroken I am! I must go to confront her about it!"
         s "‘How badly I acted to-night, Dorian!’"
-        d "‘Horribly! Horribly! It was dreadful. Are you ill? You have no idea what it was. You have no idea what I suffered.’"
+        d_sad "‘Horribly! Horribly! It was dreadful. Are you ill? You have no idea what it was. You have no idea what I suffered.’"
         s "‘Dorian... Dorian, you should have understood. But you understand now, don’t you?’"
-        d "‘Understand what?’"
+        d_sad "‘Understand what?’"
         s "‘Why I was so bad to-night. Why I shall always be bad. Why I shall never act well again.’"
         s "‘You had brought me something higher, something of which all art is but a reflection. You had made me understand what love really is.’"
         if influence == False:
             if close == False:
-                d "‘Ah my love, I guess it is for the better. You know how I loved your art, but I love you more. Let us leave this place...’"
+                d_happy "‘Ah my love, I guess it is for the better. You know how I loved your art, but I love you more. Let us leave this place...’"
                 s "‘Let's!’"
                 scene bg_room
                 n "Dorian and Sibyl marry, and live a happy life."
@@ -209,25 +210,25 @@ label start:
                 d "‘How little you can know of love, if you say it mars your art! Without your art you are nothing.’"
                 d "‘I would have made you famous, splendid, magnificent. The world would have worshipped you, and you would have borne my name.’"
                 d "‘What are you now? A third-rate actress with a pretty face.’"
-                s "‘Kiss me again, my love. Don’t go away from me. I couldn’t bear it. Oh! don’t go away from me.’"
+                s_sad "‘Kiss me again, my love. Don’t go away from me. I couldn’t bear it. Oh! don’t go away from me.’"
                 d "‘I am going. I don’t wish to be unkind, but I can’t see you again. You have disappointed me.’"
             "Forgive her, and love her":
                 d "‘Ah, you know how I loved your art! But no matter, you are still the same as when I first met you... Perhaps you’ll be able to pick the art again...’"
                 scene club
                 if close:
                     n "Later, at the club..."
-                    d "‘I have made amends with Sibyl! She told me she loved me and that’s why she acted badly! We are to marry soon!’"
+                    d_happy "‘I have made amends with Sibyl! She told me she loved me and that’s why she acted badly! We are to marry soon!’"
                     h "‘Are you sure about this, Dorian? She looked such a child, and seemed to know so little about acting.’"
                 else:
                     n "One night, Dorian runs into Harry at the club..."
-                    d "‘Hello Harry! Long time no see! Have you heard? I am engaged to Sibyl Vane!’"
+                    d_happy "‘Hello Harry! Long time no see! Have you heard? I am engaged to Sibyl Vane!’"
                     h "‘Really? I didn't think that you would do such a thing. Perhaps I was wrong...’"
                     d "‘What do you mean?’"
                     h "‘The real drawback to marriage is that it makes one unselfish. And unselfish people are colourless. They lack individuality.’"
                     h "‘Are you sure about this, Dorian?’"
                 menu:
                     "‘Yes, I'm sure. I love her.’":
-                        d "‘Yes, I'm sure. I love her.’"
+                        d_happy "‘Yes, I'm sure. I love her.’"
                         h "‘Alright, be it on your head.’"
                         scene bg_room
                         n "Dorian and Sibyl marry, and live a happy life."
@@ -247,7 +248,7 @@ label start:
                         d "‘How little you can know of love, if you say it mars your art! Without your art you are nothing.’"
                         d "‘I would have made you famous, splendid, magnificent. The world would have worshipped you, and you would have borne my name.’"
                         d "‘What are you now? A third-rate actress with a pretty face.’"
-                        s "‘Kiss me again, my love. Don’t go away from me. I couldn’t bear it. Oh! don’t go away from me.’"
+                        s_sad "‘Kiss me again, my love. Don’t go away from me. I couldn’t bear it. Oh! don’t go away from me.’"
                         d "‘I am going. I don’t wish to be unkind, but I can’t see you again. You have disappointed me.’"
         scene home_w_painting
         d "..."
@@ -268,7 +269,7 @@ label start:
             h "‘Didn’t you get my letter? I wrote to you this morning, and sent the note down, by my own man.’"
             d "‘Your letter? Oh, yes, I remember. I have not read it yet, Harry. I was afraid there might be something in it that I wouldn’t like. You cut life to pieces with your epigrams.’"
             h "‘Dorian, my letter – don’t be frightened – was to tell you that Sibyl Vane is dead.’"
-            d "‘So I have murdered Sibyl Vane.’"
+            d_sad "‘So I have murdered Sibyl Vane.’"
             h "‘Mourn for Ophelia, if you like. Put ashes on your head because Cordelia was strangled. Cry out against Heaven because the daughter of Brabantio died.’"
             h "‘But don’t waste your tears over Sibyl Vane. She was less real than they are.’"
             d "‘I am awfully obliged to you for all that you have said to me. You are certainly my best friend. No one has ever understood me as you have.’"
@@ -282,28 +283,28 @@ label start:
             scene inside_home
             n "Basil has come to visit Dorian and to console his friend about his beloved’s death, of which Dorian does not know..."
             scene outside_home
-            b "‘Dorian! Let me in, Dorian!’"
+            b_sad "‘Dorian! Let me in, Dorian!’"
             scene inside_home
-            b "‘I am so glad I have found you, Dorian. I passed a dreadful evening, half afraid that one tragedy might be followed by another.’"
-            b "‘I read of it quite by chance in a late edition of The Globe, that I picked up at the club.’"
-            b "‘I came here at once, and was miserable at not finding you. I can’t tell you how heartbroken I am about the whole thing. I know what you must suffer.’"
+            b_sad "‘I am so glad I have found you, Dorian. I passed a dreadful evening, half afraid that one tragedy might be followed by another.’"
+            b_sad "‘I read of it quite by chance in a late edition of The Globe, that I picked up at the club.’"
+            b_sad "‘I came here at once, and was miserable at not finding you. I can’t tell you how heartbroken I am about the whole thing. I know what you must suffer.’"
             d "‘Dear Basil, what are you talking about?’"
-            b "‘Oh? Haven't you heard?’"
+            b_sad "‘Oh? Haven't you heard?’"
             d "‘Heard what?’"
-            b "‘Sibyl is dead, Dorian.’"
-            d "‘Dead! Sibyl dead! It is not true! It is a horrible lie! How dare you say it?’"
-            b "‘It is quite true.’"
-            d "‘So I have murdered Sibyl Vane.’"
-            b "‘Now, that is not true at all! It is done. Grieve, but do not blame yourself.’"
+            b_sad "‘Sibyl is dead, Dorian.’"
+            d_sad "‘Dead! Sibyl dead! It is not true! It is a horrible lie! How dare you say it?’"
+            b_sad "‘It is quite true.’"
+            d_sad "‘So I have murdered Sibyl Vane.’"
+            b_sad "‘Now, that is not true at all! It is done. Grieve, but do not blame yourself.’"
         b "‘On another note, let me see the painting I did of you. It is the best thing I have ever done.’"
-        d "‘No, Basil, I do not wish you to see it.’"
+        d_angry "‘No, Basil, I do not wish you to see it.’"
         b "‘Of course I won’t look at it if you don’t want me to, but, really, it seems rather absurd that I shouldn’t see my own work, especially as I am going to exhibit it in Paris in the autumn.’"
         b "‘I shall probably have to give it another coat of varnish before that, so I must see it some day, and why not to-day?’"
         d "‘To exhibit it! You want to exhibit it?’"
         b "‘Yes; I don’t suppose you will object to that.’"
         menu:
             "Strongly object":
-                d "He must not exhibit it! I can’t let the world see into my soul!"
+                d_angry "He must not exhibit it! I can’t let the world see into my soul!"
                 b "‘Good-bye. I am sorry you won’t let me look at the picture once again.’"
                 scene home_w_painting
                 d "The portrait must be hidden away at all costs. I cannot run such a risk of discovery again."
@@ -317,23 +318,23 @@ label start:
                 b "‘What is wrong with the expression??? I don't remember painting you to look so... cruel.’"
                 d "‘One day you introduced me to a friend of yours, who explained to me the wonder of youth, and you finished a portrait of me that revealed to me the wonder of beauty.’"
                 d "‘In a mad moment, that, even now, I don’t know whether I regret or not, I made a wish, perhaps you would call it a prayer...’"
-                b "‘I remember it! Oh, how well I remember it!’"
-                b "‘‘‘Lead us not into temptation. Forgive us our sins. Wash away our iniquities.’’ Let us say that together.’"
-                b "‘The prayer of your pride has been answered. The prayer of your repentance will be answered also.’"
+                b_sad "‘I remember it! Oh, how well I remember it!’"
+                b_sad "‘‘‘Lead us not into temptation. Forgive us our sins. Wash away our iniquities.’’ Let us say that together.’"
+                b_sad "‘The prayer of your pride has been answered. The prayer of your repentance will be answered also.’"
                 d "‘It is too late, Basil.’"
-                b "‘It is never too late, Dorian.’"
+                b_sad "‘It is never too late, Dorian.’"
                 menu:
                     "Kill Basil":
                         $ basil_dead = True
-                        b "He cannot know the truth! I will be ruined! I hate him!"
+                        d_angry "He cannot know the truth! I will be ruined! I hate him!"
                         n "Dorian grabs a knife from breakfast setting at the table he was sitting at, and before he knew it he had stabbed Basil..."
                         scene home_w_painting
                         d "The portrait must be hidden away at all costs. I cannot run such a risk of discovery again."
                         d "And the body must be dealt with..."
                     "Tell Basil the truth":
                         $ painting_gone = True
-                        d "‘Oh, how I wish that were true...’"
-                        b "‘Of course it is, Dorian!’"
+                        d_sad "‘Oh, how I wish that were true...’"
+                        b_sad "‘Of course it is, Dorian!’"
                         b "‘Here, I will take the painting, but I won't display it. Don't worry, your secret is safe with me...’"
         if close:
             scene home_w_tea
@@ -414,21 +415,21 @@ label start:
             n "He was walking home from dinner with Harry when suddenly..."
             b "‘Dorian! What an extraordinary piece of luck! Here we are at your door. Let me come in for a moment. I have something to say to you. It is about yourself.’"
             scene inside_home
-            b "‘It is not much to ask of you, Dorian, and it is entirely for your own sake that I am speaking.’"
-            b "‘I think it right that you should know that the most dreadful things are being said against you in London.’"
+            b_sad "‘It is not much to ask of you, Dorian, and it is entirely for your own sake that I am speaking.’"
+            b_sad "‘I think it right that you should know that the most dreadful things are being said against you in London.’"
             d "‘I don’t wish to know anything about them. I love scandals about other people, but scandals about myself don’t interest me. They have not got the charm of novelty.’"
             if painting_gone == True:
-                b "‘I saw the painting change! I thought you said you would stop with the sin!’"
-                d "‘And then Harry saved me from such a boring lifestyle!’"
-                b "‘Remember what I told all that time ago? How it's not too late? It still isn't, Dorian. Please, listen to me...’"
+                b_sad "‘I saw the painting change! I thought you said you would stop with the sin!’"
+                d_angry "‘And then Harry saved me from such a boring lifestyle!’"
+                b_sad "‘Remember what I told all that time ago? How it's not too late? It still isn't, Dorian. Please, listen to me...’"
                 menu:
                     "Kill Basil":
                         $ basil_dead = True
-                        d "Ah I hate him so much right now!"
+                        d_angry "Ah I hate him so much right now!"
                         scene knife
-                        d "..."
+                        d_angry "..."
                         scene inside_home
-                        d "Before I knew it, I had stabbed Basil."
+                        n "Before he knew it, he had stabbed Basil."
                         if close:
                             jump harry_talk
                         else:
@@ -437,7 +438,7 @@ label start:
                             n "After what happened to Sybil, Basil, James, and others he had corrupted, he was beginning to feel guilty. When finally..."
                             jump painting_death
                     "Don't kill him":
-                        d "‘I believe you...’"
+                        d_sad "‘I believe you...’"
                         scene bg_room
                         n "At this point, Dorian no longer has the painting, and he has rejected his lifestyle."
                         n "He lives him life without constantly indulging his pleasures and sinful tendencies, the painting forgotten."
@@ -450,30 +451,30 @@ label start:
                         n "Though, he is, in theory, immortal..."
                         jump outro
             else:
-                b "‘I wonder do I know you? Before I could answer that, I should have to see your soul.’"
+                b_sad "‘I wonder do I know you? Before I could answer that, I should have to see your soul.’"
                 menu:
                     "Show Basil the painting":
                         d "‘You shall see it yourself, to-night! Come: it is your own handiwork. Why shouldn’t you look at it?’"
                         scene room_w_painting_covered
                         d "‘So you think that it is only God who sees the soul, Basil? Draw that curtain back, and you will see mine.’"
-                        b "‘You are mad, Dorian, or playing a part.’"
+                        b_sad "‘You are mad, Dorian, or playing a part.’"
                         d "‘You won’t? Then I must do it myself.’"
                         scene room_w_painting
-                        b "Ahhhhhhhh"
-                        b "‘You told me you had destroyed it.’"
+                        b "!!!"
+                        b_sad "‘You told me you had destroyed it.’"
                         d "‘I was wrong. It has destroyed me.’"
-                        b "‘‘‘Lead us not into temptation. Forgive us our sins. Wash away our iniquities.’’ Let us say that together.’"
-                        b "‘The prayer of your pride has been answered. The prayer of your repentance will be answered also.’"
+                        b_sad "‘‘‘Lead us not into temptation. Forgive us our sins. Wash away our iniquities.’’ Let us say that together.’"
+                        b_sad "‘The prayer of your pride has been answered. The prayer of your repentance will be answered also.’"
                         d "‘It is too late, Basil.’"
-                        b "‘It is never too late, Dorian.’"
+                        b_sad "‘It is never too late, Dorian.’"
                         menu:
                             "Kill Basil":
                                 $ basil_dead = True
-                                d "Ah I hate him so much right now!"
+                                d_angry "Ah I hate him so much right now!"
                                 scene knife
-                                d "..."
+                                d_angry "..."
                                 scene room_w_painting
-                                d "Before I knew it, I had stabbed Basil."
+                                n "Before he knew it, he had stabbed Basil."
                                 if close:
                                     jump harry_talk
                                 else:
@@ -483,8 +484,8 @@ label start:
                                     jump painting_death
                             "Tell Basil the truth":
                                 $ painting_gone = True
-                                d "‘Oh, how I wish that were true...’"
-                                b "‘Of course it is, Dorian!’"
+                                d_sad "‘Oh, how I wish that were true...’"
+                                b_sad "‘Of course it is, Dorian!’"
                                 b "‘Here, I will take the painting, but I won't display it. Don't worry, your secret is safe with me...’"
                                 scene bg_room
                                 n "At this point, Dorian no longer has the painting, and he has rejected his lifestyle."
@@ -498,14 +499,14 @@ label start:
                                 n "Though, he is, in theory, immortal..."
                                 jump outro
                     "Listen to Basil":
-                        d "‘There's no need. I can tell you it is corrupt.’"
-                        d "‘The rumours are all true, and there are some that you most likely haven't even heard...’"
-                        d "‘I think it's too late for me...’"
-                        b "‘Of course it isn't, Dorian!’"
-                        b "‘This is Harry's doing, not yours. Just, please, find yourself again.’"
-                        b "‘You can be the man you were before you met him, back when you were in my studio everyday.’"
-                        d "‘You really think so?’"
-                        b "‘Yes, Dorian...’"
+                        d_sad "‘There's no need. I can tell you it is corrupt.’"
+                        d_sad "‘The rumours are all true, and there are some that you most likely haven't even heard...’"
+                        d_sad "‘I think it's too late for me...’"
+                        b_sad "‘Of course it isn't, Dorian!’"
+                        b_sad "‘This is Harry's doing, not yours. Just, please, find yourself again.’"
+                        b_sad "‘You can be the man you were before you met him, back when you were in my studio everyday.’"
+                        d_sad "‘You really think so?’"
+                        b_happy "‘Yes, Dorian...’"
                         n "Basil moves on to Paris, where he takes a studio and shuts himself up till he has finished a great picture he has in his head, just as he intended to do."
                         n "Basil also salvaged his relationship with Dorian as he helped him find his way again."
                         n "While Dorian stops his sinful lifestyle after the confrontation with Basil, his past deeds still haunt him."
@@ -531,8 +532,8 @@ label start:
             scene room_w_painting
             d "I regret my wish to have the portrait take the toll for my wrongdoings. I want to start anew, and change my ways for the better. Maybe the painting will revert itself..."
             d "..."
-            d "I can see no change, save that in the eyes there was a look of cunning, and in the mouth the curved wrinkle of the hypocrite."
-            d "The thing was still loathsome - more loathsome than before - and the scarlet dew that spotted the hand seemed brighter, and more like blood newly spilt."
+            d_sad "I can see no change, save that in the eyes there was a look of cunning, and in the mouth the curved wrinkle of the hypocrite."
+            d_sad "The thing was still loathsome - more loathsome than before - and the scarlet dew that spotted the hand seemed brighter, and more like blood newly spilt."
             menu:
                 "Stab the painting":
                     n "Dorian takes the knife, the very same one that he had used to stab Basil, and thrusts it into the painting..."
