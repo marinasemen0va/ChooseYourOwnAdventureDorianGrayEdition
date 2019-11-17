@@ -6,9 +6,13 @@
 define n = Character("Narrator", image="narrator")
 define d = Character("Dorian", image="dorian")
 define d_happy = Character("Dorian", image="dorian_happy") #TODO TODO TODO
+define d_sad = Character("Dorian", image="dorian_sad") #TODO TODO TODO
+define d_angry = Character("Dorian", image="dorian_angry") #TODO TODO TODO
 define b = Character("Basil", image="basil")
+define b_sad = Character("Basil", image="basil_sad")
 define h = Character("Harry", image="harry")
 define s = Character("Sibyl", image="sibyl")
+define s_sad = Character("Sibyl", image="sibyl_sad") #TODO TODO TODO
 define nd = Character("Narrator", image="narrator_n_dorian")
 define ns = Character("Narrator", image="narrator_n_sibyl")
 
@@ -18,9 +22,13 @@ image side dorian = "dorian.png"
 image side basil = "basil.png"
 image side harry = "harry.png"
 image side sibyl = "sibyl.png"
-image side narrator_n_dorian = "narrator_n_dorian.png" #TODO TODO TODO
-image side narrator_n_sibyl = "narrator_n_sibyl.png" #TODO TODO TODO
+image side narrator_n_dorian = "narrator_n_dorian.png"
+image side narrator_n_sibyl = "narrator_n_sibyl.png"
 image side dorian_happy = "dorian_happy.png"
+image side dorian_sad = "dorian_sad.png"
+image side dorian_angry = "dorian_angry.png"
+image side sibyl_sad = "sibyl_sad.png"
+image side basil_sad = "basil_sad.png"
 
 # define scenes
 image bg_room = "bg_room.png"
