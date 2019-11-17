@@ -75,25 +75,25 @@ label start:
     label tut:
         n "So, here’s a little tutorial on how this game is going to work!"
         n "You are going to be taking on the role of Dorian Gray and you will have to make some very important choices for him!"
-        d "The choices made affect the outcome of his life, so be careful what you choose!"
+        n "The choices made affect the outcome of his life, so be careful what you choose!"
         n "Of course, you could just follow the plot of the book, but what fun is that?"
         n "In these choices, there will be the path that Dorian takes in the book, but there will be others that are not quite what happens, and others that are complete fiction."
-        n "At each turning point in Dorian’s life, you will have 2 choices, and the outcome depends on the choice you choose."
+        n "At each turning point in Dorian’s life, you will have 2 choices, and the outcome depends on the choice you make."
         n "Here, let’s try making a choice!"
         menu:
-            "I’m sure hyped for this!":
+            "I’m sure excited for this!":
                 jump hype
             "Let’s go!":
                 jump go
         label hype:
-            n "You chose “I’m sure hyped for this!” which is why I’m going to say “That’s great! Let’s go!”. If you had chosen “Let’s go!”, I would have replied “Alright, let’s go!”."
+            n "You chose “I’m sure excited for this!” which is why I’m going to say “That’s great! Let’s go!”. If you had chosen “Let’s go!”, I would have replied “Alright, let’s go!”."
             jump afttest
         label go:
-            n "You chose “Let’s go!” which is why I’m going to say “Alright, let’s go!”. If you had chosen “I’m sure hyped for this!”, I would have replied “That’s great! Let’s go!”."
+            n "You chose “Let’s go!” which is why I’m going to say “Alright, let’s go!”. If you had chosen “I’m sure excited for this!”, I would have replied “That’s great! Let’s go!”."
             jump afttest
         label afttest:
             n "As you can see, your choices make a difference!"
-            n "Furthermore, Dorian has both inner dialogue and actual speech, the second being indicated by single quotation marks."
+            n "Furthermore, Dorian has both inner dialogue and actual speech, the latter being indicated by single quotation marks."
             n "Now it’s time to seal the fate of Dorian Gray. *dun dun dunnnnnn*"
             scene dorian_at_piano
             n "Before we start, let’s get to know your character."
@@ -131,7 +131,7 @@ label start:
                 scene dorian_standing
                 h "‘You would hardly care for such an arrangement, Basil.’"
                 b_sad "‘I should object very strongly, Harry.’"
-            "Keep sitting, for Basil":
+            "Keep sitting for Basil":
                 n "Dorian stays, thus never hearing more from Harry, and therefore he is not overtaken by the painting’s beauty and youthfulness."
                 n "After a while Basil announces..."
                 b_happy "‘It is quite finished!’"
@@ -166,7 +166,7 @@ label start:
                 d_sad "‘I am going to see the play through. I am awfully sorry that I have made you waste an evening, Harry. I apologize to you both.’"
             "‘Yes, I’ll stay.’":
                 d "‘Yes, I’ll stay.’"
-                b_happy "‘That's great Dorian!’"
+                b_happy "‘That's great, Dorian!’"
                 h "I will take my leave then."
                 b "Goodbye Harry."
                 n "Dorian chose not to go with Harry, therefore preventing further bonding and influence."
@@ -179,7 +179,7 @@ label start:
                 d_happy "I have invited Basil to see her skill!"
                 ns "Sibyl performs badly that evening, contrary to her previous performances..."
                 n "After the performance..."
-                b "Dorian..."
+                b "‘Dorian...’"
                 d_sad "‘Yes, I know she acted poorly. I am going to see the play through. I am awfully sorry that I have made you waste an evening, Basil.’"
         b "‘My dear Dorian, I should think Miss Vane was ill. We will come some other night.’"
         d_sad "‘I wish she were ill, but she seems to me to be simply callous and cold. She has entirely altered.’"
@@ -319,9 +319,7 @@ label start:
                 d "‘One day you introduced me to a friend of yours, who explained to me the wonder of youth, and you finished a portrait of me that revealed to me the wonder of beauty.’"
                 d "‘In a mad moment, that, even now, I don’t know whether I regret or not, I made a wish, perhaps you would call it a prayer...’"
                 b_sad "‘I remember it! Oh, how well I remember it!’"
-                b_sad "‘‘‘Lead us not into temptation. Forgive us our sins. Wash away our iniquities.’’ Let us say that together.’"
-                b_sad "‘The prayer of your pride has been answered. The prayer of your repentance will be answered also.’"
-                d "‘It is too late, Basil.’"
+                d "‘It is too late, Basil. The deal is made.’"
                 b_sad "‘It is never too late, Dorian.’"
                 menu:
                     "Kill Basil":
@@ -343,7 +341,7 @@ label start:
             scene club
             n "One night, Dorian runs into Harry at the club..."
             h "‘Dorian, my boy! How long has it been since we last saw each other? Too long, I believe.’"
-            d "‘Yes, too long... How how you been?’"
+            d "‘Yes, too long... How have you been?’"
             h "‘Oh, just the usual. I heard about your fiancé. Sibyl Vane, was it?’"
             d "‘Yes, very unfortunate...’"
             h "‘No, I don't believe so.’"
@@ -425,7 +423,7 @@ label start:
                 menu:
                     "Kill Basil":
                         $ basil_dead = True
-                        d_angry "Ah I hate him so much right now!"
+                        d_angry "Ah, I hate him so much right now!"
                         scene knife
                         d_angry "..."
                         scene inside_home
@@ -470,7 +468,7 @@ label start:
                         menu:
                             "Kill Basil":
                                 $ basil_dead = True
-                                d_angry "Ah I hate him so much right now!"
+                                d_angry "Ah, I hate him so much right now!"
                                 scene knife
                                 d_angry "..."
                                 scene room_w_painting
