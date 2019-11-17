@@ -5,9 +5,12 @@
 # define characters
 define n = Character("Narrator", image="narrator")
 define d = Character("Dorian", image="dorian")
+define d_happy = Character("Dorian", image="dorian_happy") #TODO TODO TODO
 define b = Character("Basil", image="basil")
 define h = Character("Harry", image="harry")
 define s = Character("Sibyl", image="sibyl")
+define nd = Character("Narrator", image="narrator_n_dorian")
+define ns = Character("Narrator", image="narrator_n_sibyl")
 
 #character images
 image side narrator = "narrator.png"
@@ -15,6 +18,9 @@ image side dorian = "dorian.png"
 image side basil = "basil.png"
 image side harry = "harry.png"
 image side sibyl = "sibyl.png"
+image side narrator_n_dorian = "narrator_n_dorian.png" #TODO TODO TODO
+image side narrator_n_sibyl = "narrator_n_sibyl.png" #TODO TODO TODO
+image side dorian_happy = "dorian_happy.png"
 
 # define scenes
 image bg_room = "bg_room.png"
@@ -22,7 +28,6 @@ image dorian_at_piano = "dorian_at_piano.png"
 image dorian_standing = "dorian_standing.png"
 image garden = "garden.png"
 image theatre = "theatre.png"
-image sibyl_performs = "sibyl_performs.png"
 image backstage = "backstage.png"
 image home_w_painting = "home_w_painting.png"
 image home_w_painting_clean = "home_w_painting.png"
@@ -83,7 +88,7 @@ label start:
             n "Now it’s time to seal the fate of Dorian Gray. *dun dun dunnnnnn*"
             scene dorian_at_piano
             n "Before we start, let’s get to know your character."
-            n "Dorian, as seen in his first appearance, is a very boyish character; he is the image of innocence and purity. But at the end of the novel, he is as corrupt as people get."
+            nd "Dorian, as seen in his first appearance, is a very boyish character; he is the image of innocence and purity. But at the end of the novel, he is as corrupt as people get."
             n "So what happened? How, and when, did he lose his innocence?"
             n "As you play this game there will be significant choices which either lead to Dorian’s demise, as in the novel, or, as this is a fictitious game, it may lead to new stories..."
             jump game
@@ -146,9 +151,7 @@ label start:
                 d "I have had the arms of Rosalind around me, and kissed Juliet on the mouth. Sibyl is the only thing I care about."
                 d "The mere touch of Sybil Vane’s hand makes me forget Harry and all his wrong, fascinating, poisonous, delightful theories."
                 d "I have invited Harry and Basil to see her skill!"
-                scene sibyl_performs
-                n "Sibyl performs badly that evening, contrary to her previous performances..."
-                scene theatre
+                ns "Sibyl performs badly that evening, contrary to her previous performances..."
                 n "After the performance..."
                 h "‘She is quite beautiful, Dorian, but she can’t act. Let us go.’"
                 d "‘I am going to see the play through. I am awfully sorry that I have made you waste an evening, Harry. I apologize to you both.’"
@@ -165,9 +168,7 @@ label start:
                 if influence == True:
                     d "The mere touch of Sybil Vane’s hand makes me forget Harry and all his wrong, fascinating, poisonous, delightful theories."
                 d "I have invited Basil to see her skill!"
-                scene sibyl_performs
-                n "Sibyl performs badly that evening, contrary to her previous performances..."
-                scene theatre
+                ns "Sibyl performs badly that evening, contrary to her previous performances..."
                 n "After the performance..."
                 b "Dorian..."
                 d "‘Yes, I know she acted poorly. I am going to see the play through. I am awfully sorry that I have made you waste an evening, Basil.’"
