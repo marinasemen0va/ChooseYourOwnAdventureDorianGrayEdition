@@ -5,15 +5,15 @@
 # define characters
 define n = Character("Narrator", image="narrator")
 define d = Character("Dorian", image="dorian")
-define d_happy = Character("Dorian", image="dorian_happy") #TODO TODO TODO
-define d_sad = Character("Dorian", image="dorian_sad") #TODO TODO TODO
-define d_angry = Character("Dorian", image="dorian_angry") #TODO TODO TODO
+define d_happy = Character("Dorian", image="dorian_happy")
+define d_sad = Character("Dorian", image="dorian_sad")
+define d_angry = Character("Dorian", image="dorian_angry")
 define b = Character("Basil", image="basil")
 define b_sad = Character("Basil", image="basil_sad")
 define b_happy = Character("Basil", image="basil_happy")
 define h = Character("Harry", image="harry")
 define s = Character("Sibyl", image="sibyl")
-define s_sad = Character("Sibyl", image="sibyl_sad") #TODO TODO TODO
+define s_sad = Character("Sibyl", image="sibyl_sad")
 define nd = Character("Narrator", image="narrator_n_dorian")
 define ns = Character("Narrator", image="narrator_n_sibyl")
 
@@ -31,6 +31,7 @@ image side dorian_angry = "dorian_angry.png"
 image side sibyl_sad = "sibyl_sad.png"
 image side basil_sad = "basil_sad.png"
 image side basil_happy = "basil_happy.png"
+
 # define scenes
 image bg_room = "bg_room.png"
 image dorian_at_piano = "dorian_at_piano.png"
