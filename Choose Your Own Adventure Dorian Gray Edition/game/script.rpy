@@ -86,10 +86,10 @@ label start:
             "Let’s go!":
                 jump go
         label hype:
-            n "You chose “I’m sure excited for this!” which is why I’m going to say “That’s great! Let’s go!”. If you had chosen “Let’s go!”, I would have replied “Alright, let’s go!”."
+            n "You chose ‘I’m sure excited for this!’ which is why I’m going to say ‘That’s great! Let’s go!’. If you had chosen ‘Let’s go!’, I would have replied ‘Alright, let’s go!’."
             jump afttest
         label go:
-            n "You chose “Let’s go!” which is why I’m going to say “Alright, let’s go!”. If you had chosen “I’m sure excited for this!”, I would have replied “That’s great! Let’s go!”."
+            n "You chose ‘Let’s go!’ which is why I’m going to say ‘Alright, let’s go!’. If you had chosen ‘I’m sure excited for this!’, I would have replied ‘That’s great! Let’s go!’."
             jump afttest
         label afttest:
             n "As you can see, your choices make a difference!"
