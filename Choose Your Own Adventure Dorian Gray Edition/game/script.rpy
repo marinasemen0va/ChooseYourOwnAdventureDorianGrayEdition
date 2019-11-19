@@ -142,6 +142,7 @@ label start:
         menu:
             "‘I can’t.’":
                 $ close = True
+                $ influence = True
                 d "‘I can’t, Basil.’"
                 b_sad "‘Why?’"
                 d "‘Because I have promised Lord Henry Wotton to go with him.’"
@@ -235,6 +236,7 @@ label start:
                         n "Dorian and Sibyl marry, and live a happy life."
                         n "In this path, Dorian does undergo influence and does make the deal with the painting, but in the end he chooses to love Sibyl."
                         n "He has shown a love for Sibyl which transcends his love for pleasures and sin, which results in him taking her as his loving wife."
+                        n "Though, he is, in theory, immortal..."
                         jump outro
                     "‘No, Harry. I'm not.’":
                         d "‘No, Harry. I'm not.’"
