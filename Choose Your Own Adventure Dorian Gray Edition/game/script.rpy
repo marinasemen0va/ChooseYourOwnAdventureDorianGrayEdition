@@ -369,6 +369,14 @@ label start:
                             n "His relationship with Basil is not ruined as he trusted him enough to reveal the truth and did not murder him, and he is not in any close relationship with Harry."
                             n "Though, he is, in theory, immortal..."
                             jump outro
+                    n "By not taking and reading the book, which is very closely linked with the cause of his scandalous lifestyle, Dorian avoids said lifestyle, although the painting is still an influence."
+                    n "His life is now more of a mimic of Harry’s; still involving indulgences, yet not as horrid."
+                    n "Dorian continues to live his life, but his conscience burdens him."
+                    if basil_dead:
+                        n "After what happened to Sybil, Basil, James, and others he had corrupted, he was beginning to feel guilty. When finally..."
+                    else:
+                        n "After what happened to Sybil, James, and others he had corrupted, he was beginning to feel guilty. When finally..."
+                    jump painting_death
         scene book
         n "Dorian's eyes fall upon a yellow book..."
         menu:
@@ -429,13 +437,8 @@ label start:
                         d_angry "..."
                         scene inside_home
                         n "Before he knew it, he had stabbed Basil."
-                        if close:
-                            jump harry_talk
-                        else:
-                            scene room_w_painting_covered
-                            n "Dorian continues to live his life, but his conscience burdens him."
-                            n "After what happened to Sybil, Basil, James, and others he had corrupted, he was beginning to feel guilty. When finally..."
-                            jump painting_death
+                        n "Dorian continues his sinful lifestyle, and as Dorian has not destroyed the painting, he is therefore, in theory, immortal..."
+                        jump outro
                     "Don't kill him":
                         d_sad "‘I believe you...’"
                         scene bg_room
