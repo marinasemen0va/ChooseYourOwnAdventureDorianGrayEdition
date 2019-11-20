@@ -95,12 +95,11 @@ label start:
         label afttest:
             n "As you can see, your choices make a difference!"
             n "Furthermore, Dorian has both inner dialogue and actual speech, the latter being indicated by single quotation marks."
-            n "Now it’s time to seal the fate of Dorian Gray. *dun dun dunnnnnn*"
-            scene dorian_at_piano
             n "Before we start, let’s get to know your character."
             nd "Dorian, as seen in his first appearance, is a very boyish character; he is the image of innocence and purity. But at the end of the novel, he is as corrupt as people get."
             n "So what happened? How, and when, did he lose his innocence?"
             n "As you play this game there will be significant choices which either lead to Dorian’s demise, as in the novel, or, as this is a fictitious game, it may lead to new stories..."
+            n "Now it’s time to seal the fate of Dorian Gray. *dun dun dunnnnnn*"
             jump game
     # skip tutorial path
     label notut:
@@ -129,7 +128,6 @@ label start:
                 d_sad "‘I shall grow old, and horrible, and dreadful. It will never be older than this particular day of June....’"
                 d_sad "‘If it were only the other way! If it were I who was to be always young, and the picture that was to grow old!’"
                 d_sad "‘For that – for that – I would give everything! Yes, there is nothing in the whole world I would not give! I would give my soul for that!’"
-                scene dorian_standing
                 h "‘You would hardly care for such an arrangement, Basil.’"
                 b_sad "‘I should object very strongly, Harry.’"
             "Keep sitting for Basil":
