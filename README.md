@@ -23,6 +23,8 @@ things that shaped Dorian. It also allows for extrapolation
 of what would happen if these events were not to occur and 
 just how different Dorian would be. 
 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Slide Show](https://docs.google.com/presentation/d/1V-x0c56SBWfxCobP4sjYesJ6RyjyQpRbffrkWihDYMo/edit?usp=sharing)
+
 ### Instructions
 * Download [Choose Your Own Adventure: Dorian Gray Edition](https://github.com/marinasemen0va/ChooseYourOwnAdventureDorianGrayEdition/archive/master.zip).
 * Unzip the downloaded archive file.
