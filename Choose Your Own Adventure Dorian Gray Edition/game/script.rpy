@@ -53,6 +53,7 @@ image talk_w_harry = "talk_w_harry.png"
 image club = "club.png"
 image book_in_hand = "book_in_hand.png"
 image room_w_painting = "room_w_painting.png"
+image room_w_painting_no_knife = "room_w_painting_no_knife.png"
 image room_w_painting_covered = "room_w_painting_covered.png"
 
 # game starts here
@@ -67,20 +68,20 @@ label start:
     scene bg_room
     # intro
     menu:
-        n "Hello, and welcome to Choose Your Own Adventure: Dorian Gray Edition. Would you like a tutorial or are you a returning player ready to get into the action?"
+        n "Hello, and welcome to Choose Your Own Adventure: Dorian Gray Edition! Would you like a tutorial or are you a returning player ready to get into the action?"
         "I would like a tutorial.":
             jump tut
         "No, I’m good.":
             jump notut
     # the tutorial path
     label tut:
-        n "So, here’s a little tutorial on how this game is going to work!"
-        n "You are going to be taking on the role of Dorian Gray and you will have to make some very important choices for him!"
+        n "So, here’s a little tutorial on how this game is going to work."
+        n "You are going to be taking on the role of Dorian Gray and you will have to make some very important choices for him."
         n "The choices made affect the outcome of his life, so be careful what you choose!"
         n "Of course, you could just follow the plot of the book, but what fun is that?"
         n "In these choices, there will be the path that Dorian takes in the book, but there will be others that are not quite what happens, and others that are complete fiction."
         n "At each turning point in Dorian’s life, you will have 2 choices, and the outcome depends on the choice you make."
-        n "Here, let’s try making a choice!"
+        n "Here, try making a choice."
         menu:
             "I’m sure excited for this!":
                 jump hype
@@ -93,13 +94,13 @@ label start:
             n "You chose ‘Let’s go!’ which is why I’m going to say ‘Alright, let’s go!’. If you had chosen ‘I’m sure excited for this!’, I would have replied ‘That’s great! Let’s go!’."
             jump afttest
         label afttest:
-            n "As you can see, your choices make a difference!"
+            n "As you can see, your choices do make a difference!"
             n "Furthermore, Dorian has both inner dialogue and actual speech, the latter being indicated by single quotation marks."
-            n "Before we start, let’s get to know your character."
+            n "Before you start, you should get to know your character."
             nd "Dorian, as seen in his first appearance, is a very boyish character; he is the image of innocence and purity. But at the end of the novel, he is as corrupt as people get."
             n "So what happened? How, and when, did he lose his innocence?"
             n "As you play this game there will be significant choices which either lead to Dorian’s demise, as in the novel, or, as this is a fictitious game, it may lead to new stories..."
-            n "Now it’s time to seal the fate of Dorian Gray. *dun dun dunnnnnn*"
+            n "Now it’s time to seal the fate of Dorian Gray... *dun dun dunnnnnn*"
             jump game
     # skip tutorial path
     label notut:
@@ -278,7 +279,7 @@ label start:
             d "I will continue to live, I will leave behind Sybil’s death."
             d "The portrait will bear the burden of my shame, and I will live on, as youthful as ever, with infinite passions to pursue. But no one must see. I must cover it, and hide it away."
             scene inside_home
-            n "Basil has come to visit Dorian and to console his friend about his beloved’s death, but alas, he needs no consoling as he has put if far, far behind him."
+            n "Basil has come to visit Dorian and to console his friend about his beloved’s death, but alas, he needs no consoling as he has put it far, far behind him."
             n "But Basil has another thing on his mind..."
         else:
             scene inside_home
@@ -306,6 +307,7 @@ label start:
         menu:
             "Strongly object":
                 d_angry "He must not exhibit it! I can’t let the world see into my soul!"
+                d "‘I do not wish you to exhibit it.’"
                 b "‘Good-bye. I am sorry you won’t let me look at the picture once again.’"
                 scene home_w_painting
                 d "The portrait must be hidden away at all costs. I cannot run such a risk of discovery again."
@@ -385,7 +387,7 @@ label start:
                 n "Dorian begins to turn the leaves of the novel, becoming absorbed in minutes."
                 n "Things that he had dimly dreamed of were suddenly made real to him, and things of which he had never dreamed were gradually revealed."
                 d "Oh, I am late for meeting Harry at the club! I lost myself in the book!"
-                n "Harry, yet again, had to reveal me to myself. I’m sure I won’t be able to free myself from the influence of this book, and I won’t seek to. It is quite poisonous."
+                d "Harry, yet again, had to reveal me to myself. I’m sure I won’t be able to free myself from the influence of this book, and I won’t seek to. It is quite poisonous."
             "Leave it":
                 scene home_w_tea
                 if basil_dead == False:
@@ -419,7 +421,10 @@ label start:
             n "His reputation is tarnished because of the strange rumours and evil things that are said amongst the public, but many dismiss these stories because of how innocent he looks."
             n "He grew more and more enamoured of his own beauty, more and more interested in the corruption of his own soul."
             n "It was on the ninth of November, the eve of Dorian’s own thirty-eighth birthday, as he often remembered afterwards."
-            n "He was walking home from dinner with Harry when suddenly..."
+            if close == True:
+                n "He was walking home from dinner with Harry when suddenly..."
+            else:
+                n "He was walking home when suddenly..."
             b "‘Dorian! What an extraordinary piece of luck! Here we are at your door. Let me come in for a moment. I have something to say to you. It is about yourself.’"
             scene inside_home
             b_sad "‘It is not much to ask of you, Dorian, and it is entirely for your own sake that I am speaking.’"
@@ -475,7 +480,7 @@ label start:
                                 d_angry "Ah, I hate him so much right now!"
                                 scene knife
                                 d_angry "..."
-                                scene room_w_painting
+                                scene room_w_painting_no_knife
                                 n "Before he knew it, he had stabbed Basil."
                                 if close:
                                     jump harry_talk
@@ -543,7 +548,8 @@ label start:
                     n "There was a cry heard, and a crash. The servants eventually find the source of the sound."
                     n "When they entered, they found hanging upon the wall a splendid portrait of their master as they had last seen him, in all the wonder of his exquisite youth and beauty."
                     n "Lying on the floor was a dead man, in evening dress, with a knife in his heart. He was withered, wrinkled, and loathsome of visage."
-                    n "It was not till they had examined the rings that they recognized who it was. In an attempt to be rid of the sins he has committed, Dorian ends up killing himself."
+                    n "It was not till they had examined the rings that they recognized who it was."
+                    n "In an attempt to be rid of the sins he has committed, Dorian ends up killing himself."
                     jump outro
                 "Leave the painting be":
                     scene bg_room
@@ -554,5 +560,6 @@ label start:
                     jump outro
     # end of game
     label outro:
+        scene bg_room
         n "Hey! You’ve completed the game! Thank you for playing! Hope you enjoyed the experience and learned something new!"
         return
